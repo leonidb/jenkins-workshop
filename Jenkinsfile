@@ -21,16 +21,30 @@ spec:
 """
         }
     }
+    options {
+        timestamps()
+    }
     stages {
         stage('Compile') {
             steps {
                 sh 'sbt compile'
             }
         }
-    }
-    stage("Unit Tests") {
-        steps {
-            sh "sbt 'testOnly' -- -n UnitTest'"
+        stage("Unit Tests") {
+            steps {
+                sh "sbt test"
+            }
+        }
+        stage("Bla") {
+            steps {
+                sh "echo Bla!"
+            }
         }
     }
+    post {
+        always {
+            junit 'target/junit/**/*.xml'
+        }
+    }
+
 }
