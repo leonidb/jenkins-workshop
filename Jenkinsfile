@@ -29,7 +29,7 @@ spec:
         }
         stage("Unit Tests") {
             steps {
-                sh "sbt 'testOnly' -- -n UnitTest'"
+                sh "sbt 'testOnly -- -n UnitTest'"
             }
         }
         stage("Bla") {
