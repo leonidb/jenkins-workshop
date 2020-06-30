@@ -38,4 +38,11 @@ spec:
             }
         }
     }
+    post {
+        always {
+            junit 'target/junit/**/*.xml'
+            archiveArtifacts 'target/**/*.jar'
+        }
+    }
+
 }
