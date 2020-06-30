@@ -33,4 +33,9 @@ spec:
             sh "sbt 'testOnly' -- -n UnitTest'"
         }
     }
+    stage("Bla") {
+        steps {
+            sh "echo Bla!"
+        }
+    }
 }
