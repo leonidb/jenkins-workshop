@@ -27,15 +27,15 @@ spec:
                 sh 'sbt compile'
             }
         }
-    }
-    stage("Unit Tests") {
-        steps {
-            sh "sbt 'testOnly' -- -n UnitTest'"
+        stage("Unit Tests") {
+            steps {
+                sh "sbt 'testOnly' -- -n UnitTest'"
+            }
         }
-    }
-    stage("Bla") {
-        steps {
-            sh "echo Bla!"
+        stage("Bla") {
+            steps {
+                sh "echo Bla!"
+            }
         }
     }
 }
